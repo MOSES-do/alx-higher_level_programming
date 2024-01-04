@@ -2,12 +2,13 @@
 import sys
 from calculator_1 import add, sub, mul, div
 
+
 def calc():
 
     if len(sys.argv) < 2:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         sys.exit(1)
-    
+
     arg1 = sys.argv[1]
     ope = sys.argv[2]
     arg2 = sys.argv[3]
