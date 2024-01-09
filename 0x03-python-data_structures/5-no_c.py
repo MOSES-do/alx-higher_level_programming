@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 
 def no_c(my_string):
-    new_str = ""
-    for i in my_string:
-        if i == "c" or i == "C":
-            i = ""
-        print(i, end="")
+    if my_string[:]:
+        new_str = my_string.translate({ord("c"): None})
+        C_str = my_string.translate({ord("C"): None})
+        return C_str
+    return my_string
