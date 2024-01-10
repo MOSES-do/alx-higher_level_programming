@@ -4,7 +4,6 @@ def max_integer(my_list=[]):
     temp = 0
     listLen = len(my_list) - 1
     lenMinus = listLen - len(my_list[2 : -1])
-    print(f"{lenMinus}")
     if len(my_list) == 0:
         return None
     else:
