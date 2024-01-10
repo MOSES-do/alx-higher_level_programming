@@ -3,10 +3,12 @@
 def max_integer(my_list=[]):
     temp = 0
     listLen = len(my_list) - 1
+    lenMinus = listLen - len(my_list[2 : -1])
+    print(f"{lenMinus}")
     if len(my_list) == 0:
         return None
     else:
-        while listLen > 1:
+        while lenMinus > 1:
             j = 0
             while j < listLen:
                 """print("{}, {}".format(j, j+1))
@@ -23,3 +25,5 @@ def max_integer(my_list=[]):
                     my_list[j+1] = temp
                     # print("{:d}--tempdown".format(temp))
                 j += 1
+            lenMinus = -1
+        return temp
