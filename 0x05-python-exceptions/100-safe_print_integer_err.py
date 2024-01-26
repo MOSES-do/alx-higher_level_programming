@@ -15,7 +15,7 @@ def safe_print_integer_err(value):
         output = f"{ex}: Unknown format code 'd' for object of type 'float'\n"
     elif (t == "str"):
         output = f"{ex}: Unknown format code 'd' for object of type 'str'\n"
-    if (value == "None" or value == []):
+    else
         output = f"{ex}: unsupported format string passed to NoneType{ex1}\n"
 
     try:
