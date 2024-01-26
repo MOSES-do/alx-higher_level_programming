@@ -9,8 +9,10 @@ def list_division(my_list_1, my_list_2, list_length):
             ans = 0
             print("division by {}".format(ans))
         except TypeError:
+            ans = 0
             print("wrong type")
         except IndexError:
+            ans = 0
             print("out of range")
         finally:
             tuple_a.append(ans)
