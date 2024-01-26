@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 
 
-try:
-    def safe_print_list(my_list=[], x=0):
+def safe_print_list(my_list=[], x=0):
+    try:
         number = 0
         count = 0
         for i in my_list:
@@ -11,11 +11,11 @@ try:
             for my_list in range(1, x+1):
                 count += 1
                 print("{}".format(my_list), end="")
-        print('\n')
-        if (x > number):
+        else:
             for my_list in range(1, number+1):
                 print("{}".format(my_list), end="")
             count = number
+        print()
         return count
-except ValueError:
-    print(f"OOps, No error is can be caught", e)
+    except Exception:
+        print("OOps")
