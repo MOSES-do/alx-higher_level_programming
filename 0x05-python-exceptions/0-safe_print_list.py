@@ -4,11 +4,17 @@
 try:
     def safe_print_list(my_list=[], x=0):
         number = 0
-        if x > 5:
-            x = 5
-        for my_list in range(1, x+1):
+        count = 0
+        for i in my_list:
             number += 1
-            print("{}".format(my_list), end="\n")
-        return number
+        if (x <= number):
+             for my_list in range(1, x+1):
+                count += 1
+                print("{}".format(my_list), end="\n")
+        if (x > number):
+            for my_list in range(1, number+1):
+                print("{}".format(my_list), end="\n")
+            count = number
+        return count
 except ValueError:
-    print(f"OOps, No error is can be caught", e)
+        print(f"OOps, No error is can be caught", e)
