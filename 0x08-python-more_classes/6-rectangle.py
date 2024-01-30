@@ -1,15 +1,21 @@
 #!/usr/bin/python3
 
 """
-Definition of a Rectangle class
+Definition of a rectangle class
 """
 
 
 class Rectangle:
     """Class definition of rectangle instances"""
+    number_of_instances = 0
+
     def __init__(self, width=0, height=0):
         self.__height = height
         self.__width = width
+        Rectangle.number_of_instances += 1
+
+    if number_of_instances > 0:
+        print("{:d}".format(number_of_instances))
 
     @property
     def height(self):
@@ -55,15 +61,15 @@ class Rectangle:
         for i in range(0, self.__height):
             for j in range(self.__width):
                 hashtag += "#"
-            hashtag += "\n"
-        return hashtag
 
     def __repr__(self):
         """returns official string represenatio of rectangle"""
+        mod = type(self).__module__
         kclas = type(self).__name__
+        memadd = hex(id(self))
         return f"{kclas}({self.__width}, {self.__height})"
 
     def __del__(self):
-        """prints message when class instance is deleted"""
+        """prints message on deletion of rectangle instance"""
         Rectangle.number_of_instances -= 1
         print("Bye Rectangle...")
