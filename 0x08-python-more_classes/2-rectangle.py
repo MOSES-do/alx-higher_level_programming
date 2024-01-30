@@ -34,8 +34,7 @@ class Rectangle:
             raise TypeError("width must be an integer")
         elif (value < 0):
             raise ValueError("width must be >= 0")
-        else:
-            self.__width = value
+        self.__width = value
 
     def area(self):
         """calculates the area of a rectangle"""
@@ -43,7 +42,25 @@ class Rectangle:
 
     def perimeter(self):
         """returns the perimeter of a rectangle"""
-        if (self.__width == 0 or self.__height == 0):
+        if (self.__width or self.__height == 0):
             perimeter = 0
         perimeter = (self.__width + self.__height) * 2
         return perimeter
+
+    def __str__(self):
+        hashtag = ""
+        """Print the sqaure with the # character"""
+        if self.__width or self.__height == 0:
+            hashtag = ""
+        for i in range(0, self.__height):
+            for j in range(self.__width):
+                hashtag += "#"
+            hashtag += "\n"
+        return hashtag
+
+    def __repr__(self):
+        """returns official string represenatio of rectangle"""
+        modl = type(self).__module__
+        klas = type(self).__name__
+        memad = hex(id(self))
+        return f"<{modl}.{klas} object at {memad}>"
