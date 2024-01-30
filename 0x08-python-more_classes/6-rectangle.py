@@ -14,9 +14,6 @@ class Rectangle:
         self.__width = width
         Rectangle.number_of_instances += 1
 
-    if number_of_instances > 0:
-        print("{:d}".format(number_of_instances))
-
     @property
     def height(self):
         return self.__height
