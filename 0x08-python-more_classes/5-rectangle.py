@@ -64,4 +64,5 @@ class Rectangle:
         return f"{kclas}({self.__width}, {self.__height})"
 
     def __del__(self):
+        """prints message when class instance is deleted"""
         print("Bye Rectangle...")
