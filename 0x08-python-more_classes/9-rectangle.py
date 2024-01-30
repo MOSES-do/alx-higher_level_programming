@@ -9,7 +9,6 @@ class Rectangle:
     """Class definition of rectangle instances"""
     number_of_instances = 0
     print_symbol = "#"
-    size = 0
 
     def __init__(self, width=0, height=0):
         self.__height = height
@@ -87,5 +86,6 @@ class Rectangle:
         elif (rect_2.area() > rect_1.area()):
             return rect_2
 
+    @classmethod
     def square(cls, size=0):
-        return cls(size, size)
+        return Rectangle(size, size)
