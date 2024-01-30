@@ -8,6 +8,8 @@ Definition of a rectangle class
 class Rectangle:
     """Class definition of rectangle instances"""
     number_of_instances = 0
+    print_symbol = "#"
+
 
     def __init__(self, width=0, height=0):
         self.__height = height
@@ -45,19 +47,20 @@ class Rectangle:
 
     def perimeter(self):
         """returns the perimeter of a rectangle"""
-        if (self.__width or self.__height == 0):
+        if (self.__width == 0 or self.__height == 0):
             perimeter = 0
         perimeter = (self.__width + self.__height) * 2
-        return perimeter
+        return perimeter;
 
     def __str__(self):
         hashtag = ""
         """Print the sqaure with the # character"""
-        if self.__width or self.__height == 0:
-            hashtag = ""
-        for i in range(0, self.__height):
+        for i in range(self.__height):
             for j in range(self.__width):
-                hashtag += "#"
+                hashtag += str(Rectangle.print_symbol)
+            hashtag += '\n'
+        return hashtag
+
 
     def __repr__(self):
         """returns official string represenatio of rectangle"""
@@ -69,4 +72,4 @@ class Rectangle:
     def __del__(self):
         """prints message on deletion of rectangle instance"""
         Rectangle.number_of_instances -= 1
-        print("Bye Rectangle...")
+        print("Bye rectangle...")
