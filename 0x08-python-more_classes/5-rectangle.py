@@ -42,26 +42,27 @@ class Rectangle:
 
     def perimeter(self):
         """returns the perimeter of a rectangle"""
-        if (self.__width or self.__height == 0):
+        if (self.__width == 0 or self.__height == 0):
             return (0)
         return ((self.__width + self.__height) * 2)
 
     def __str__(self):
         hashtag = ""
         """Print the sqaure with the # character"""
-        if self.__width or self.__height == 0:
-            hashtag = ""
+        if self.__width == 0 or self.__height == 0:
+            return ("")
         for i in range(0, self.__height):
             for j in range(self.__width):
                 hashtag += "#"
-            hashtag += "\n"
+            if (i != self.__height - 1):
+                hashtag += "\n"
         return hashtag
 
     def __repr__(self):
         """returns official string represenatio of rectangle"""
         kclas = type(self).__name__
         return f"{kclas}({self.__width}, {self.__height})"
-    
 
-
-
+    def __del__(self):
+        """prints a sting on deletion of rectangle instance"""
+        printf("Bye rectangle...")
