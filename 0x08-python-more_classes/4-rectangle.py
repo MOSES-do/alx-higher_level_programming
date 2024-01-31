@@ -55,7 +55,7 @@ class Rectangle:
             for j in range(self.__width):
                 hashtag += "#"
             if (i != self.__height - 1):
-            hashtag += "\n"
+                hashtag += "\n"
         return (hashtag)
 
     def __repr__(self):
