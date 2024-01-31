@@ -51,19 +51,20 @@ class Rectangle:
         return ((self.__width + self.__height) * 2)
 
     def __str__(self):
+        if (self.__width == 0 or self.__height == 0):
+            return ("")
         hashtag = ""
         """Print the sqaure with the # character"""
         for i in range(self.__height):
             for j in range(self.__width):
                 hashtag += str(Rectangle.print_symbol)
-            hashtag += '\n'
+            if (i != self.__height):
+                hashtag += '\n'
         return hashtag
 
     def __repr__(self):
         """returns official string represenatio of rectangle"""
-        mod = type(self).__module__
         kclas = type(self).__name__
-        memadd = hex(id(self))
         return f"{kclas}({self.__width}, {self.__height})"
 
     def __del__(self):
