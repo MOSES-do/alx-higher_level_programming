@@ -54,7 +54,7 @@ class Rectangle:
         for i in range(0, self.__height):
             for j in range(self.__width):
                 hashtag += "#"
-            #if (i != self.__height - 1):
+            if (i != self.__height - 1):
             hashtag += "\n"
         return (hashtag)
 
