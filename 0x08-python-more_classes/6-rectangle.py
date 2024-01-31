@@ -45,14 +45,14 @@ class Rectangle:
 
     def perimeter(self):
         """returns the perimeter of a rectangle"""
-        if (self.__width or self.__height == 0):
+        if (self.__width == 0 or self.__height == 0):
             return (0)
         return ((self.__width + self.__height) * 2)
 
     def __str__(self):
         hashtag = ""
         """Print the sqaure with the # character"""
-        if self.__width or self.__height == 0:
+        if self.__width == 0 or self.__height == 0:
             return ("")
         for i in range(self.__height):
             for j in range(self.__width):
