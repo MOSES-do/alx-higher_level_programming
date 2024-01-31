@@ -62,7 +62,7 @@ class Rectangle:
                 hashtag += "\n"
         return hashtag
 
-    def __repr__(self):
+    def __repr(self):
         """returns official string represenatio of rectangle"""
         kclas = type(self).__name__
         return f"{kclas}({self.__width}, {self.__height})"
