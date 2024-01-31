@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 """
 Definition of a Rectangle class
 """
@@ -7,6 +6,7 @@ Definition of a Rectangle class
 
 class Rectangle:
     """Class definition of rectangle instances"""
+
     number_of_instances = 0
 
     def __init__(self, width=0, height=0):
