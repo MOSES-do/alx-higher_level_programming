@@ -59,7 +59,7 @@ class Rectangle:
         """Print the sqaure with the # character"""
         for i in range(self.__height):
             for j in range(self.__width):
-                hashtag += str(type(self).print_symbol)
+                hashtag += str(Rectangle.print_symbol)
             if (i != self.__height - 1):
                 hashtag += '\n'
         return (hashtag)
