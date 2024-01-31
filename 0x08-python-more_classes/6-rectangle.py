@@ -7,16 +7,17 @@ Definition of a Rectangle class
 
 class Rectangle:
     """Class definition of rectangle instances"""
+
     number_of_instances = 0
 
     def __init__(self, width=0, height=0):
+        type(self).number_of_instances += 1
         self.height = height
         self.width = width
-        type(self).number_of_instances += 1
 
     @property
     def height(self):
-        return self.__height
+        return (self.__height)
 
     @height.setter
     def height(self, value):
@@ -28,7 +29,7 @@ class Rectangle:
 
     @property
     def width(self):
-        return self.__width
+        return (self.__width)
 
     @width.setter
     def width(self, value):
@@ -49,15 +50,16 @@ class Rectangle:
         return ((self.__width + self.__height) * 2)
 
     def __str__(self):
-        hashtag = ""
         """Print the sqaure with the # character"""
         if self.__width == 0 or self.__height == 0:
             return ("")
+
+        hashtag = ""
         for i in range(self.__height):
             for j in range(self.__width):
                 hashtag += "#"
-            #if (i != self.__height - 1):
-            hashtag += "\n"
+            if (i != self.__height - 1):
+                hashtag += "\n"
         return hashtag
 
     def __repr__(self):
