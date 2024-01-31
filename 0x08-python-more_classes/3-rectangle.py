@@ -45,15 +45,15 @@ class Rectangle:
             return (0)
         return ((self.__width + self.__height) * 2)
 
-    hashtag = ""
 
     def __str__(self):
+        hashtag = ""
         """Print the sqaure with the # character"""
         if self.__width == 0 or self.__height == 0:
             return ("")
         for i in range(self.__height):
             for j in range(self.__width):
                 hashtag += "#"
-                if (i != self.__height - 1):
-                    hashtag += "\n"
+            if (i != self.__height - 1):
+                hashtag += "\n"
         return (hashtag)
