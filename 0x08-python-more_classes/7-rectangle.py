@@ -11,9 +11,9 @@ class Rectangle:
     print_symbol = "#"
 
     def __init__(self, width=0, height=0):
+        Rectangle.number_of_instances += 1
         self.height = height
         self.width = width
-        Rectangle.number_of_instances += 1
 
     @property
     def height(self):
@@ -65,7 +65,7 @@ class Rectangle:
         return (hashtag)
 
     def __repr__(self):
-        """returns official string represenatio of rectangle"""
+        """returns official string represenation of rectangle"""
         kclas = type(self).__name__
         return (f"{kclas}({self.__width}, {self.__height})")
 
