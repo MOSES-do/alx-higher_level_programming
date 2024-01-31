@@ -11,7 +11,7 @@ class Rectangle:
     print_symbol = "#"
 
     def __init__(self, width=0, height=0):
-        Rectangle.number_of_instances += 1
+        type(self).number_of_instances += 1
         self.height = height
         self.width = width
 
@@ -59,7 +59,7 @@ class Rectangle:
         """Print the sqaure with the # character"""
         for i in range(self.__height):
             for j in range(self.__width):
-                hashtag += str(Rectangle.print_symbol)
+                hashtag += str(type(self).print_symbol)
             if (i != self.__height - 1):
                 hashtag += '\n'
         return (hashtag)
@@ -71,5 +71,5 @@ class Rectangle:
 
     def __del__(self):
         """prints message on deletion of rectangle instance"""
-        Rectangle.number_of_instances -= 1
+        type(self).number_of_instances -= 1
         print("Bye rectangle...")
