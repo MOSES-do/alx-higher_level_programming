@@ -50,11 +50,12 @@ class Rectangle:
         hashtag = ""
         """Print the sqaure with the # character"""
         if self.__width or self.__height == 0:
-            hashtag = ""
+            return ("")
         for i in range(0, self.__height):
             for j in range(self.__width):
                 hashtag += "#"
-            hashtag += "\n"
+            if (i != self.__height - 1):
+                hashtag += "\n"
         return hashtag
 
     def __repr__(self):
