@@ -65,4 +65,4 @@ class Rectangle:
 
     def __del__(self):
         """prints a sting on deletion of rectangle instance"""
-        printf("Bye rectangle...")
+        print("Bye rectangle...")
