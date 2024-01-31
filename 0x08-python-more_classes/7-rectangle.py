@@ -16,6 +16,7 @@ class Rectangle:
         Rectangle.number_of_instances += 1
 
     @property
+    """return height of rectangle"""
     def height(self):
         return self.__height
 
@@ -25,10 +26,10 @@ class Rectangle:
             raise TypeError("height must be an integer")
         elif (value < 0):
             raise ValueError("height must be >= 0")
-        else:
-            self.__height = value
+        self.__height = value
 
     @property
+    """return width of rectangle"""
     def width(self):
         return self.__width
 
@@ -54,6 +55,7 @@ class Rectangle:
         if (self.__width == 0 or self.__height == 0):
             return ("")
         hashtag = ""
+
         """Print the sqaure with the # character"""
         for i in range(self.__height):
             for j in range(self.__width):
