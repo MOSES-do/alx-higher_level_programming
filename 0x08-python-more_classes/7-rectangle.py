@@ -16,8 +16,8 @@ class Rectangle:
         Rectangle.number_of_instances += 1
 
     @property
-    """return height of rectangle"""
     def height(self):
+        """return height of rectangle"""
         return self.__height
 
     @height.setter
@@ -29,8 +29,8 @@ class Rectangle:
         self.__height = value
 
     @property
-    """return width of rectangle"""
     def width(self):
+        """return width of rectangle"""
         return self.__width
 
     @width.setter
