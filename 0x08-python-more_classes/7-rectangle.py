@@ -10,7 +10,6 @@ class Rectangle:
     number_of_instances = 0
     print_symbol = "#"
 
-
     def __init__(self, width=0, height=0):
         self.height = height
         self.width = width
@@ -63,12 +62,9 @@ class Rectangle:
                 hashtag += '\n'
         return hashtag
 
-
     def __repr__(self):
         """returns official string represenatio of rectangle"""
-        mod = type(self).__module__
         kclas = type(self).__name__
-        memadd = hex(id(self))
         return f"{kclas}({self.__width}, {self.__height})"
 
     def __del__(self):
