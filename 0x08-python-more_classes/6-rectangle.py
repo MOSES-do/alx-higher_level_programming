@@ -51,7 +51,7 @@ class Rectangle:
 
     def __str__(self):
         """Print the sqaure with the # character"""
-        if self.__width == 0 or self.__height == 0:
+        if (self.__width == 0 or self.__height == 0):
             return ("")
 
         hashtag = ""
@@ -62,7 +62,7 @@ class Rectangle:
                 hashtag += "\n"
         return hashtag
 
-    def __repr(self):
+    def __repr__(self):
         """returns official string represenatio of rectangle"""
         kclas = type(self).__name__
         return f"{kclas}({self.__width}, {self.__height})"
@@ -70,4 +70,4 @@ class Rectangle:
     def __del__(self):
         """prints message when class instance is deleted"""
         type(self).number_of_instances -= 1
-        print("Bye Rectangle...")
+        print("Bye rectangle...")
