@@ -54,13 +54,11 @@ class Rectangle:
         for i in range(0, self.__height):
             for j in range(self.__width):
                 hashtag += "#"
-            if (i != self.__height - 1):
-                hashtag += "\n"
-        return hashtag
+            #if (i != self.__height - 1):
+            hashtag += "\n"
+        return (hashtag)
 
     def __repr__(self):
         """returns official string represenatio of rectangle"""
-        mod = type(self).__module__
         kclas = type(self).__name__
-        memadd = hex(id(self))
-        return f"<{mod}.{kclas} object at {memadd}>"
+        return f"{kclas}({self.__width}, {self.__height})"
