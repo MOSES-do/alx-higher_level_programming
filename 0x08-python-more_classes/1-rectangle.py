@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 """
 Definition of a Rectangle class
 """
@@ -8,8 +7,8 @@ Definition of a Rectangle class
 class Rectangle:
     """Class definition of Rectangle instances"""
     def __init__(self, width=0, height=0):
-        self.__height = height
-        self.__width = width
+        self.height = height
+        self.width = width
 
     @property
     def height(self):
@@ -18,7 +17,6 @@ class Rectangle:
 
     @height.setter
     def height(self, value):
-        """function to assign/change value of private variable"""
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         elif (value < 0):
@@ -33,7 +31,6 @@ class Rectangle:
 
     @width.setter
     def width(self, value):
-        """function to assign/change value of private variable"""
         if type(value) is not int:
             raise TypeError("width must be an integer")
         elif (value < 0):
