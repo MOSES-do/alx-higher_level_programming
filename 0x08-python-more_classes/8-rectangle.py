@@ -10,6 +10,7 @@ class Rectangle:
     number_of_instances = 0
     print_symbol = "#"
 
+
     def __init__(self, width=0, height=0):
         self.__height = height
         self.__width = width
@@ -49,7 +50,7 @@ class Rectangle:
         if (self.__width == 0 or self.__height == 0):
             perimeter = 0
         perimeter = (self.__width + self.__height) * 2
-        return perimeter
+        return perimeter;
 
     def __str__(self):
         hashtag = ""
@@ -59,6 +60,7 @@ class Rectangle:
                 hashtag += str(Rectangle.print_symbol)
             hashtag += '\n'
         return hashtag
+
 
     def __repr__(self):
         """returns official string represenatio of rectangle"""
@@ -71,17 +73,3 @@ class Rectangle:
         """prints message on deletion of rectangle instance"""
         Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
-
-    @staticmethod
-    def bigger_or_equal(rect_1, rect_2):
-        """returns the biggest rectangle"""
-        if not isinstance(rect_1, Rectangle):
-            raise TypeError("rect_1 must be an instance of Rectangle")
-        elif not isinstance(rect_2, Rectangle):
-            raise TypeError("rect_2 must be an instance of Rectangle")
-        if (rect_1.area() == rect_2.area()):
-            return rect_1
-        elif (rect_1.area() > rect_2.area()):
-            return rect_1
-        elif (rect_2.area() > rect_1.area()):
-            return rect_2

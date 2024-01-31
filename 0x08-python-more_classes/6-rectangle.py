@@ -1,20 +1,15 @@
 #!/usr/bin/python3
 
 """
-Definition of a rectangle class
+Definition of a Rectangle class
 """
 
 
 class Rectangle:
     """Class definition of rectangle instances"""
-    number_of_instances = 0
-    print_symbol = "#"
-
-
     def __init__(self, width=0, height=0):
         self.__height = height
         self.__width = width
-        Rectangle.number_of_instances += 1
 
     @property
     def height(self):
@@ -47,29 +42,28 @@ class Rectangle:
 
     def perimeter(self):
         """returns the perimeter of a rectangle"""
-        if (self.__width == 0 or self.__height == 0):
+        if (self.__width or self.__height == 0):
             perimeter = 0
         perimeter = (self.__width + self.__height) * 2
-        return perimeter;
+        return perimeter
 
     def __str__(self):
         hashtag = ""
         """Print the sqaure with the # character"""
-        for i in range(self.__height):
+        if self.__width or self.__height == 0:
+            hashtag = ""
+        for i in range(0, self.__height):
             for j in range(self.__width):
-                hashtag += str(Rectangle.print_symbol)
-            hashtag += '\n'
+                hashtag += "#"
+            hashtag += "\n"
         return hashtag
-
 
     def __repr__(self):
         """returns official string represenatio of rectangle"""
-        mod = type(self).__module__
         kclas = type(self).__name__
-        memadd = hex(id(self))
         return f"{kclas}({self.__width}, {self.__height})"
 
     def __del__(self):
-        """prints message on deletion of rectangle instance"""
+        """prints message when class instance is deleted"""
         Rectangle.number_of_instances -= 1
-        print("Bye rectangle...")
+        print("Bye Rectangle...")

@@ -42,7 +42,7 @@ class Rectangle:
 
     def perimeter(self):
         """returns the perimeter of a rectangle"""
-        if (self.__width or self.__height == 0):
+        if (self.__width == 0 or self.__height == 0):
             perimeter = 0
         perimeter = (self.__width + self.__height) * 2
         return perimeter
@@ -60,7 +60,7 @@ class Rectangle:
 
     def __repr__(self):
         """returns official string represenatio of rectangle"""
-        mod = type(self).__module__
-        kclas = type(self).__name__
-        memadd = hex(id(self))
-        return f"<{mod}.{kclas} object at {memadd}>"
+        modl = type(self).__module__
+        klas = type(self).__name__
+        memad = hex(id(self))
+        return f"<{modl}.{klas} object at {memad}>"

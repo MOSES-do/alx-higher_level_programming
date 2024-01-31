@@ -63,4 +63,4 @@ class Rectangle:
         mod = type(self).__module__
         kclas = type(self).__name__
         memadd = hex(id(self))
-        return f"{kclas}({self.__width}, {self.__height})"
+        return f"<{mod}.{kclas} object at {memadd}>"

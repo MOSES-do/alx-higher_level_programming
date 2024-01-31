@@ -62,8 +62,7 @@ class Rectangle:
         """returns official string represenatio of rectangle"""
         kclas = type(self).__name__
         return f"{kclas}({self.__width}, {self.__height})"
+    
 
-    def __del__(self):
-        """prints message when class instance is deleted"""
-        Rectangle.number_of_instances -= 1
-        print("Bye Rectangle...")
+
+
