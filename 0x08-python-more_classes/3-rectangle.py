@@ -45,7 +45,6 @@ class Rectangle:
             return (0)
         return ((self.__width + self.__height) * 2)
 
-
     def __str__(self):
         hashtag = ""
         """Print the sqaure with the # character"""
