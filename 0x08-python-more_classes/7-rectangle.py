@@ -18,11 +18,11 @@ class Rectangle:
     @property
     def height(self):
         """return height of rectangle"""
-        return self.__height
+        return (self.__height)
 
     @height.setter
     def height(self, value):
-        if type(value) is not int:
+        if not isinstance(value, int):
             raise TypeError("height must be an integer")
         elif (value < 0):
             raise ValueError("height must be >= 0")
@@ -31,11 +31,11 @@ class Rectangle:
     @property
     def width(self):
         """return width of rectangle"""
-        return self.__width
+        return (self.__width)
 
     @width.setter
     def width(self, value):
-        if type(value) is not int:
+        if not isinstance(value, int):
             raise TypeError("width must be an integer")
         elif (value < 0):
             raise ValueError("width must be >= 0")
@@ -62,12 +62,12 @@ class Rectangle:
                 hashtag += str(Rectangle.print_symbol)
             if (i != self.__height - 1):
                 hashtag += '\n'
-        return hashtag
+        return (hashtag)
 
     def __repr__(self):
         """returns official string represenatio of rectangle"""
         kclas = type(self).__name__
-        return f"{kclas}({self.__width}, {self.__height})"
+        return (f"{kclas}({self.__width}, {self.__height})")
 
     def __del__(self):
         """prints message on deletion of rectangle instance"""
