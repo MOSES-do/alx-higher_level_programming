@@ -10,7 +10,7 @@ def add_integer(a, b=98):
         a = int(a)
 
     if type(b) not in [int]:
-       int_b = int(b)
-       b = int(b)
+        int_b = int(b)
+        b = int(b)
 
     return (a + b)
