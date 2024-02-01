@@ -1,0 +1,19 @@
+------------------------------------
+How to use 2-matrix_divided integer
+------------------------------------
+
+Converts floating point numbers to integers and perform the operation
+
+
+
+::
+
+	>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+	>>> div = 0
+	>>> matrix = [
+	...		[3, 9],
+	...		[12, 15]
+	...	]
+	>>> matrix_divided(matrix, div)
+	Traceback (most recent call last):
+	ZeroDivisionError: division by zero
