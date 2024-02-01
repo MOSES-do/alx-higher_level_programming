@@ -18,6 +18,9 @@ def matrix_divided(matrix, div):
         count = 0
         for j in range(len(matrix[i])):
             count += 1
+            if (not isinstance(matrix[i], list) or (not isinstance(matrix, list)) or matrix == []):
+                raise TypeError("matrix must be a matrix \
+                (list of lists) of integers/floats")
             if not isinstance(matrix[i][j], (int, float)):
                 raise TypeError("matrix must be a matrix \
                 (list of lists) of integers/floats")
