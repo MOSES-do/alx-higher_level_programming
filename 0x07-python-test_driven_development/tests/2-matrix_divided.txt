@@ -17,3 +17,32 @@ Converts floating point numbers to integers and perform the operation
 	>>> matrix_divided(matrix, div)
 	Traceback (most recent call last):
 	ZeroDivisionError: division by zero
+	
+
+    >>> div = 3
+	>>> matrix = [
+	...		[3, 9],
+	...		[12, 15, 3]
+	...	]
+	>>> matrix_divided(matrix, div)
+	Traceback (most recent call last):
+	TypeError: Each row of the matrix must have the same size
+    
+
+    >>> div = 3
+	>>> matrix = [
+	...		[3, "9"],
+	...		[12, 15]
+	...	]
+	>>> matrix_divided(matrix, div)
+	Traceback (most recent call last):
+	TypeError: matrix must be a matrix (list of lists) of integers/floats)
+    
+    >>> div = "3"
+	>>> matrix = [
+	...		[3, 9],
+	...		[12, 15]
+	...	]
+	>>> matrix_divided(matrix, div)
+	Traceback (most recent call last):
+	TypeError: div must be a number
