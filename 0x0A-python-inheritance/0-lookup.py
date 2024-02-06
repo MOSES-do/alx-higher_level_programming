@@ -5,5 +5,4 @@
 
 def lookup(obj):
     """return class object"""
-    all_attr = dir(obj)
-    return all_attr
+    return (dir(obj))
