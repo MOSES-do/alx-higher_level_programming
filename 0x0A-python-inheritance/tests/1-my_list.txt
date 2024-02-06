@@ -16,36 +16,27 @@
 ::
 
 	>>> my_list = MyList()
-	>>> my_list.append(2.34)
+	>>> my_list.append("string")
+	>>> my_list.append(7.8)
+	>>> print(my_list)
+	['string', 7.8]
+
+
+	>>> my_list = MyList()
+	>>> my_list.append("string")
 	>>> my_list.append(7.8)
 	>>> my_list.print_sorted()
 	Traceback (most recent call back):
 		...
-	TypeError: must be an integer
+	TypeError: '<' not supported between instances of 'float' and 'str'
 
 ::
 
 	>>> a = []
-	>>> my_list = MyList(l)
+	>>> my_list = MyList(a)
 	>>> my_list.print_sorted()
-	Traceback (most recent call back):
-		...
-	TypeError: must be an integer
+	[]
 
-::
+    >>> isinstance(my_list, list)
+    True
 
-	>>> l = float('NaN')
-	>>> my_list = MyList(l)
-	>>> my_list.print_sorted()
-	Traceback (most recent call last):
-		...
-	ValueError: cannot convert from NaN to integer
-
-::
-
-	>>> l = [Hello, 1]
-	>>> my_list = MyList(l)
-	>>> my_list.print_sorted(i)
-	Traceback (most recent call last):
-		...
-	TypeError: must be an integer
