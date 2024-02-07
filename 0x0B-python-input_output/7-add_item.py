@@ -14,6 +14,7 @@ filename = "add_item.json"
 def createJSONFILE():
     """Add arguments to a python list"""
     save_to_json_file(arguments, filename)
-    #json_file = load_from_json_file(filename)
+    """json_file = load_from_json_file(filename)"""
+
 
 createJSONFILE()
