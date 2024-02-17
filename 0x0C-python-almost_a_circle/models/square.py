@@ -13,7 +13,7 @@ class Square(Rectangle):
         """The overloading __str__ method should return [Square]..."""
 
         return (f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}")
- 
+
     @property
     def size(self):
         """Getter"""
@@ -25,7 +25,7 @@ class Square(Rectangle):
         self.height = value
 
     def update(self, *args, **kwargs):
-        """args=index + arguments, kwargs=key pair values"""        
+        """args=index + arguments, kwargs=key pair values"""
         if args and len(args) != 0:
             index = 0
             for arg in args:
