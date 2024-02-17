@@ -63,3 +63,22 @@ class Rectangle(Base):
         elif (value < 0):
             raise ValueError("y must be >= 0")
         self.__y = value
+
+    def area(self):
+        """calculates the area of a rectangle"""
+        return (self.__width * self.__height)
+
+    def display(self):
+        for i in range(self.__height):
+            for j in range(self.__width):
+                print("#", end="")
+            print()
+
+    def __str__(self):
+        kclas = type(self).__name__
+        new_id = self.id
+        a = self.__x
+        b = self.__y
+        w = self.__width
+        h = self.__height
+        return ("[{}] ({}) {}/{} - {}/{}".format(kclas, self.id, a, b, w, h))
