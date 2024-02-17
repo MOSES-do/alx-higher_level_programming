@@ -69,16 +69,18 @@ class Rectangle(Base):
         return (self.__width * self.__height)
 
     def display(self):
+        """Returns a range in 2d array based on height and with values"""
         for i in range(self.__height):
             for j in range(self.__width):
                 print("#", end="")
             print()
 
     def __str__(self):
+        """overrides __str__ witha different value"""
         kclas = type(self).__name__
         new_id = self.id
         a = self.__x
         b = self.__y
         w = self.__width
         h = self.__height
-        return ("[{}] ({}) {}/{} - {}/{}".format(kclas, self.id, a, b, w, h))
+        return ("[{}] ({}) {}/{} - {}/{}".format(kclas, new_id, a, b, w, h))
