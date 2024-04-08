@@ -6,15 +6,15 @@ let fac = Number(argv[2]);
 
 if (isNaN(fac)) {
 	console.log('1')
+	return
 }
 
-function factorial (number) {
+function factorial (number){
 	if (number <= 1) {
 		return 1
-	} else {
-		return number * factorial(number - 1)
 	}
+	return number * factorial(number - 1);
 }
+
 result = factorial(fac)
 console.log(result)
-
