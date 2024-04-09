@@ -1,5 +1,4 @@
 #!/usr/bin/node
-
 class Rectangle {
   constructor (w, h) {
     if (w <= 0 || h <= 0 || !h || !w) {
@@ -20,5 +19,4 @@ class Rectangle {
     }
   }
 }
-
 module.exports = Rectangle;
