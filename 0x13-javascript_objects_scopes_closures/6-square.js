@@ -8,6 +8,7 @@ class Square extends ParentSquare {
   }
   
   charPrint(val) {
+    if (this.size <= 0) return;
     const stamp = val === undefined ? 'X' : 'C';
     for (let i = 0; i < this.size; i++) {
       let str = '';
