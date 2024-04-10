@@ -9,7 +9,7 @@ if (isNaN(fac)) {
   return;
 }
 
-function factorial (number){
+function factorial (number) {
   if (number <= 1) {
     return 1;
   }
