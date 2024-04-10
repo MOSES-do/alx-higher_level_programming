@@ -19,5 +19,5 @@ class Square extends ParentSquare {
     }
   }
 
-}
+};
 module.exports = Square;
