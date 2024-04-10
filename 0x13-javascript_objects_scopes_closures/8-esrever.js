@@ -1,13 +1,13 @@
 #!/usr/bin/node
 
-exports.esrever = function(list) {
-  let length = Math.floor(list.length / 2);
+exports.esrever = function (list) {
+  const length = Math.floor(list.length / 2);
 
   for (let i = 0; i < length; i++) {
-    let temp = list[i];
+    const temp = list[i];
     list[i] = list[list.length - i - 1];
     list[list.length - i - 1] = temp;
   }
 
   return list;
-}
+};
