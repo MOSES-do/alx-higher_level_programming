@@ -2,7 +2,7 @@
 
 const { argv } = require('process');
 
-constt fac = Number(argv[2]);
+const fac = Number(argv[2]);
 
 if (isNaN(fac)) {
   console.log('1');
