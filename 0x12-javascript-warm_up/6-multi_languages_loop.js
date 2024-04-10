@@ -8,5 +8,5 @@ for ( val of progLanguages) {
 */
 
 for (let num = 0; num < progLanguages.length; num++) {
-	console.log(progLanguages[num]);
+  console.log(progLanguages[num]);
 }
