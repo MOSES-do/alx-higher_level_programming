@@ -2,12 +2,12 @@
 const ParentSquare = require('./5-square');
 
 class Square extends ParentSquare {
-  constructor(size) {
+  constructor (size) {
     super();
     this.size = size;
   }
   
-  charPrint(val) {
+  charPrint (val) {
     if (this.size <= 0) return;
     const stamp = val === undefined ? 'X' : val;
     for (let i = 0; i < this.size; i++) {
