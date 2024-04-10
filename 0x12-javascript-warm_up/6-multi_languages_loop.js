@@ -1,9 +1,10 @@
 #!/usr/bin/node
 const progLanguages = ['C is fun', 'Python is cool', 'JavaScript is amazing'];
 
-/*progLanguages.forEach((val) => console.log(`${val}`))
+/*
+progLanguages.forEach((val) => console.log(`${val}`))
 for ( val of progLanguages) {
-	console.log(val)
+  console.log(val)
 }
 */
 
