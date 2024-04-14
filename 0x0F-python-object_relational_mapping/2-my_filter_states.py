@@ -2,9 +2,14 @@
 
 """ This python file prints the name of states in hbtn_0e_0_usa database """
 
-
+import sys
 import MySQLdb
 
+
+if len(sys.argv) < 4:
+    sys.exit(1)
+
+user_input = sys.argv[4]
 
 HOST = "localhost"
 user = "root"
@@ -16,12 +21,10 @@ def main():
 
     db = MySQLdb.connect(host=HOST, user=user, passwd="", db=d_base)
     cur = db.cursor()
-    cur.execute("SELECT * FROM states WHERE id = %s OR id = %s ORDER BY states.id ASC", (4, 5))
+    cur.execute("SELECT * FROM states WHERE name LIKE '%{}%'".format(user_input))
 
-    result = cur.fetchall()
-
-    for states in result:
-        print(states)
+    result = cur.fetchone()
+    print(result)
     cur.close()
     db.close()
 
