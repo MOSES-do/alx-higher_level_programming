@@ -6,9 +6,6 @@ import sys
 import MySQLdb
 
 
-if len(sys.argv) < 4:
-    sys.exit(1)
-
 ui = sys.argv[4]
 
 HOST = "localhost"
