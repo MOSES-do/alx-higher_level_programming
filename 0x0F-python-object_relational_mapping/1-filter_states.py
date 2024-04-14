@@ -16,9 +16,10 @@ def main():
 
     db = MySQLdb.connect(host=HOST, user=user, passwd="", db=d_base)
     cur = db.cursor()
-    cur.execute("SELECT * FROM states WHERE id = %s OR id = %s", (4,5))
+    cur.execute("SELECT * FROM states WHERE id = %s OR id = %s", (4, 5))
+
     result = cur.fetchall()
-    
+
     for states in result:
         print(states)
     cur.close()
