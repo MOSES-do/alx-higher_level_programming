@@ -16,15 +16,11 @@ def main():
 
     db = MySQLdb.connect(host=HOST, user=user, passwd="", db=d_base)
     cur = db.cursor()
-    cur.execute("SELECT name FROM states ORDER BY states.id ASC")
+    cur.execute("SELECT id, name FROM states ORDER BY states.id ASC")
     result = cur.fetchall()
 
-    num = 0
     for states in result:
-        num += 1
-        state = "%s," % states
-        new_state = state.replace(',', '')
-        print(f"({num}, '{new_state}')")
+        print(states)
     cur.close()
     db.close()
 
