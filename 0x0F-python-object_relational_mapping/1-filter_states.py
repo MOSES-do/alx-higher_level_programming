@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-""" This python fie prints the name of states in hbtn_0e_0_usa database """
+""" This python file prints the name of states in hbtn_0e_0_usa database """
 
 
 import MySQLdb
@@ -12,13 +12,13 @@ d_base = "hbtn_0e_0_usa"
 
 
 def main():
-    """ Executing mysql query to get name of states from database table """
+    """ Executing mysql query to get states  4&5 from database table """
 
     db = MySQLdb.connect(host=HOST, user=user, passwd="", db=d_base)
     cur = db.cursor()
-    cur.execute("SELECT * FROM states ORDER BY states.id ASC")
+    cur.execute("SELECT * FROM states WHERE id = %s OR id = %s", (4,5))
     result = cur.fetchall()
-
+    
     for states in result:
         print(states)
     cur.close()
