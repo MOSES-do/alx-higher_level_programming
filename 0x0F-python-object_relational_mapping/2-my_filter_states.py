@@ -18,10 +18,12 @@ def main():
 
     db = MySQLdb.connect(host=HOST, user=user, passwd="", db=d_base)
     cur = db.cursor()
-    cur.execute("SELECT * FROM states WHERE name LIKE '%{}%'".format(ui))
+    cur.execute("SELECT * FROM states WHERE name LIKE '%{}%' \
+    ORDER BY states.id".format(ui))
 
-    result = cur.fetchone()
-    print(result)
+    result = cur.fetchall()
+    for state in result:
+        print(state)
     cur.close()
     db.close()
 
