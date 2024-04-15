@@ -13,16 +13,16 @@ if __name__ == '__main__':
             f"mysql+mysqldb://{argv[1]}:\
             {argv[2]}@localhost:3306/{argv[3]}"
         )
-    Session = sessionmaker(bind=engine)
 
+    Session = sessionmaker(bind=engine)
     session = Session()
     name = argv[4]
-    all_states = session.query(State). \
-        filter(State.name.like('%'+name+'%')).all()
-    for state in all_states:
-        if state:
-            print(f"{state.id}")
-        else:
-            print("Not found")
+
+    state = session.query(State). \
+        filter(State.name.like('%'+name+'%')).first()
+    if state:
+        print(f"{state.id}")
+    else:
+        print("Not found")
 
     session.close()
