@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+
 """ This python file prints the name of states in hbtn_0e_0_usa database """
 
 
@@ -21,7 +22,7 @@ def main():
                 )
 
     cur = db.cursor()
-    query = "SELECT cities.name FROM cities \
+    query = "SELECT BINARY cities.name FROM cities \
                 JOIN states ON cities.state_id = states.id \
                 WHERE states.name = %s \
                 ORDER BY cities.id"
