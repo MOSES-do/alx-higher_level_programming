@@ -28,17 +28,21 @@ def main():
                 WHERE states.name = %s \
                 ORDER BY cities.id ASC"
    """
+    """cur.execute(query, (sys.argv[4],))"""
+    """for states in result[:-1]:
+        print("%s, " % states, end='')
+    print("%s" % result[-1])"""
+
     query = """SELECT cities.name FROM cities
                 WHERE state_id = (
                 SELECT id FROM states WHERE name = '{}'
              )""".format(sys.argv[4])
-    """cur.execute(query, (sys.argv[4],))"""
     cur.execute(query)
 
     result = cur.fetchall()
-    for states in result[:-1]:
-        print("%s, " % states, end='')
-    print("%s" % result[-1])
+    """conversion of tuples into strings"""
+    v = [value[0] for value in result]
+    print(", ".join(v))
 
     cur.close()
     db.close()
