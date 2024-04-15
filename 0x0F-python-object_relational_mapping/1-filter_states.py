@@ -10,7 +10,7 @@ HOST = "localhost"
 
 
 def main():
-    """ Executing mysql query to get states that start 
+    """ Executing mysql query to get states that start
     with 'N' from database table """
     db = MySQLdb.connect(
                     host=HOST,
