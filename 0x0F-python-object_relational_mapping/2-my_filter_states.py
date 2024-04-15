@@ -9,12 +9,11 @@ import MySQLdb
 ui = sys.argv[4]
 
 HOST = "localhost"
-user = "root"
-d_base = "hbtn_0e_0_usa"
 
 
 def main():
-    """ Executing mysql query to get states  4&5 from database table """
+    """ Executing mysql query to get states that start
+        with 'N' from database table """
 
     db = MySQLdb.connect(
                     host=HOST,
@@ -24,8 +23,11 @@ def main():
                     db=sys.argv[3]
                 )
     cur = db.cursor()
-    cur.execute("SELECT * FROM states WHERE name LIKE '%{}%' \
-    ORDER BY states.id".format(ui))
+    query = "SELECT * FROM states WHERE name LIKE '{placeholder}' \
+    ORDER BY states.id"
+    search_term = ui
+    sql_query = query.format(placeholder=search_term)
+    cur.execute(sql_query)
 
     result = cur.fetchall()
     for state in result:

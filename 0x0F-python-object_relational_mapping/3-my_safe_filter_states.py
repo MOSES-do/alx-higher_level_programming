@@ -9,12 +9,11 @@ import MySQLdb
 user_input = sys.argv[4]
 
 HOST = "localhost"
-user = "root"
-d_base = "hbtn_0e_0_usa"
 
 
 def main():
-    """ Executing mysql query to get states  4&5 from database table """
+    """ Executing mysql query to get states
+    that start with 'N' from database table """
 
     db = MySQLdb.connect(
                     host=HOST,
