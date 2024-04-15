@@ -30,9 +30,10 @@ def main():
     cur.execute(query, (sys.argv[4],))
 
     result = cur.fetchall()
+    for states in result[:-1]:
+        print("%s, " % states, end='')
+    print("%s" % result[-1])
 
-    for states in result:
-        print("%s," % states, end='')
     cur.close()
     db.close()
 
