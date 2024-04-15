@@ -6,8 +6,6 @@ import sys
 import MySQLdb
 
 
-user_input = sys.argv[4]
-
 HOST = "localhost"
 
 
@@ -24,8 +22,8 @@ def main():
                 )
     cur = db.cursor()
     query = "SELECT * FROM states WHERE BINARY states.name = %s \
-    ORDER BY states.id ASC LIMIT 1"
-    cur.execute(query, (user_input,))
+    ORDER BY states.id ASC"
+    cur.execute(query, (sys.argv[4],))
 
     result = cur.fetchall()
 
