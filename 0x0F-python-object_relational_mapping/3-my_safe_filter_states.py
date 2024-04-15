@@ -16,7 +16,13 @@ d_base = "hbtn_0e_0_usa"
 def main():
     """ Executing mysql query to get states  4&5 from database table """
 
-    db = MySQLdb.connect(host=HOST, user=user, passwd="", db=d_base)
+    db = MySQLdb.connect(
+                    host=HOST,
+                    user=sys.argv[1],
+                    port=3306,
+                    passwd=sys.argv[2],
+                    db=sys.argv[3]
+                )
     cur = db.cursor()
     query = f"SELECT * FROM states WHERE name = %s ORDER BY states.id \
     ASC LIMIT 1"

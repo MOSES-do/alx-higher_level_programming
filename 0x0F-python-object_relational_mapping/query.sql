@@ -1,0 +1,4 @@
+-- SHOW DATABASES;
+USE hbtn_0e_4_usa
+SHOW TABLES;
+SELECT * FROM cities;
