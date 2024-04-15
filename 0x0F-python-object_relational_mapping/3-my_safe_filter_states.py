@@ -23,9 +23,9 @@ def main():
                     db=sys.argv[3]
                 )
     cur = db.cursor()
-    query = f"SELECT * FROM states WHERE name = %s ORDER BY states.id \
-    ASC LIMIT 1"
-    cur.execute(query, (user_input,))
+    query = "SELECT * FROM states WHERE name = '{}' \
+    ORDER BY states.id ASC LIMIT 1".format(sys.argv[4])
+    cur.execute(query)
 
     result = cur.fetchall()
 
