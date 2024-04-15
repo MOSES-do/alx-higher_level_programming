@@ -6,8 +6,6 @@ import sys
 import MySQLdb
 
 
-ui = sys.argv[4]
-
 HOST = "localhost"
 
 
@@ -23,10 +21,9 @@ def main():
                     db=sys.argv[3]
                 )
     cur = db.cursor()
-    sql_query = "SELECT * FROM states WHERE BINARY states.name LIKE %s \
-    ORDER BY states.id ASC"
-    search_term = ui
-    cur.execute(sql_query, (search_term,))
+    sql_query = "SELECT * FROM states WHERE BINARY states.name = '{}' \
+    ORDER BY states.id ASC".format(sys.argv[4])
+    cur.execute(sql_query)
     """query = "SELECT * FROM states WHERE BINARY \
     states.name LIKE '{placeholder}' \
     ORDER BY states.id ASC"
