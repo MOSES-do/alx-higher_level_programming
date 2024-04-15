@@ -26,7 +26,7 @@ def main():
     query = "SELECT cities.name FROM cities \
                 JOIN states ON cities.state_id = states.id \
                 WHERE states.name = %s \
-                ORDER BY cities.id"
+                ORDER BY cities.id ASC"
     cur.execute(query, (sys.argv[4],))
 
     result = cur.fetchall()
