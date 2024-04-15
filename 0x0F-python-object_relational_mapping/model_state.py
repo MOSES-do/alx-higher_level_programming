@@ -1,12 +1,10 @@
 #!/usr/bin/python3
-
-from sqlalchemy import Column, Integer, String, create_engine
-from sqlalchemy.ext.declarative import declarative_base
-
 """Class representing existing table in database"""
 
 
-DATABASE_URL = 'mysql+mysqlconnector://root:root@localhost/hbtn_0e_6_usa'
+from sqlalchemy import Column, Integer, String
+from sqlalchemy.orm import declarative_base
+
 
 Base = declarative_base()
 
