@@ -27,7 +27,8 @@ def main():
     ORDER BY states.id ASC"
     search_term = ui
     cur.execute(sql_query, (search_term,))
-    """query = "SELECT * FROM states WHERE BINARY states.name LIKE '{placeholder}' \
+    """query = "SELECT * FROM states WHERE BINARY \
+    states.name LIKE '{placeholder}' \
     ORDER BY states.id ASC"
     search_term = ui
     sql_query = query.format(placeholder=search_term)
