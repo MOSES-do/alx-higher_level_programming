@@ -20,7 +20,8 @@ def main():
                     db=sys.argv[3]
                  )
     cur = db.cursor()
-    query = "SELECT * FROM states WHERE name LIKE %s ORDER BY states.id ASC"
+    query = "SELECT * FROM states WHERE BINARY states.name LIKE %s \
+        ORDER BY states.id ASC"
     search_term = 'N%'
     cur.execute(query, (search_term,))
 
