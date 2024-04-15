@@ -6,6 +6,8 @@ from sqlalchemy.ext.declarative import declarative_base
 """Class representing existing table in database"""
 
 
+DATABASE_URL = 'mysql+mysqlconnector://root:root@localhost/hbtn_0e_6_usa'
+
 Base = declarative_base()
 
 
