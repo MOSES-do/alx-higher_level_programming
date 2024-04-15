@@ -10,6 +10,7 @@ import sys
 
 HOST = "localhost"
 
+
 def main():
     """ Executing mysql query to get states  4&5 from database table """
 
@@ -22,7 +23,7 @@ def main():
                 )
 
     cur = db.cursor()
-    query = "SELECT BINARY cities.name FROM cities \
+    query = "SELECT cities.name FROM cities \
                 JOIN states ON cities.state_id = states.id \
                 WHERE states.name = %s \
                 ORDER BY cities.id"
