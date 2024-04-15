@@ -19,7 +19,7 @@ if __name__ == '__main__':
     name = argv[4]
 
     state = session.query(State). \
-        filter(State.name.like('%'+name+'%')).first()
+        filter(State.name == name).first()
     if state:
         print(f"{state.id}")
     else:
