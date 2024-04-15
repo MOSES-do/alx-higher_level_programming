@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-"""Class"""
+"""QUERYING OUR DATABASE TO FETCH TABLE VALUES"""
 
 
 if __name__ == '__main__':
@@ -20,5 +20,5 @@ if __name__ == '__main__':
     all_states = session.query(State).order_by(State.id.asc()).all()
     for state in all_states:
         print(f"{state.id}: {state.name}")
-    
+
     session.close()
