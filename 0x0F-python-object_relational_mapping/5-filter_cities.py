@@ -6,10 +6,8 @@
 import MySQLdb
 import sys
 
+
 HOST = "localhost"
-
-user_state = sys.argv[4]
-
 
 def main():
     """ Executing mysql query to get states  4&5 from database table """
@@ -27,7 +25,7 @@ def main():
                 JOIN states ON cities.state_id = states.id \
                 WHERE states.name = %s \
                 ORDER BY cities.id"
-    cur.execute(query, (user_state,))
+    cur.execute(query, (sys.argv[4],))
 
     result = cur.fetchall()
 
