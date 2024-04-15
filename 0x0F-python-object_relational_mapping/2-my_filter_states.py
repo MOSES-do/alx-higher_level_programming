@@ -23,7 +23,7 @@ def main():
                     db=sys.argv[3]
                 )
     cur = db.cursor()
-    query = "SELECT * FROM states WHERE BINARY name LIKE '{placeholder}' \
+    query = "SELECT * FROM states WHERE BINARY states.name LIKE '{placeholder}' \
     ORDER BY states.id"
     search_term = ui
     sql_query = query.format(placeholder=search_term)
