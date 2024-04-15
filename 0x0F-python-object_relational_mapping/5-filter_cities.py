@@ -4,25 +4,35 @@
 
 
 import MySQLdb
-
+import sys
 
 HOST = "localhost"
-user = "root"
-d_base = "hbtn_0e_4_usa"
+
+user_state = sys.argv[4]
 
 
 def main():
     """ Executing mysql query to get states  4&5 from database table """
 
-    db = MySQLdb.connect(host=HOST, user=user, passwd="", db=d_base)
+    db = MySQLdb.connect(
+                    host=HOST,
+                    user=sys.argv[1],
+                    port=3306,
+                    passwd=sys.argv[2],
+                    db=sys.argv[3]
+                )
+
     cur = db.cursor()
-    cur.execute("SELECT cities.id, cities.name, states.name FROM cities \
-                JOIN states ON cities.state_id = states.id")
+    query = "SELECT cities.name FROM cities \
+                JOIN states ON cities.state_id = states.id \
+                WHERE states.name = %s \
+                ORDER BY cities.id"
+    cur.execute(query, (user_state,))
 
     result = cur.fetchall()
 
     for states in result:
-        print(states)
+        print("%s," % states, end='')
     cur.close()
     db.close()
 
