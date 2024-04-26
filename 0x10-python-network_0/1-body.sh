@@ -1,3 +1,3 @@
 #!/bin/bash
 # Display the response of the request body
-echo $(curl -s -o response_body.txt "$1")
+curl -sIL "$1" | grep -q "HTTP/1.1 200 OK" && curl -sL "$1"
