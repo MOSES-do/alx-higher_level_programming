@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Python networking using urllib to 
+"""Python networking using urllib to
 fetch https://alx-intranet.hbtn.io/status"""
 import urllib.request
 
