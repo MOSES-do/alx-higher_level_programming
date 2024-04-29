@@ -2,6 +2,7 @@
 """Python netwoking using urllib"""
 import urllib.request
 
+
 URI = urllib.request.Request('https://alx-intranet.hbtn.io/status')
 with urllib.request.urlopen(URI) as response:
   html = response.read()
