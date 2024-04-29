@@ -1,8 +1,6 @@
 #!/usr/bin/python3
-"""Python netwoking using urllib"""
+"""Python networking using urllib to fetch https://alx-intranet.hbtn.io/status"""
 import urllib.request
-
-
 if __name__ == "__main__":
   URI = urllib.request.Request('https://alx-intranet.hbtn.io/status')
   with urllib.request.urlopen(URI) as response:
