@@ -1,9 +1,11 @@
 #!/usr/bin/python3
 """send an email as parameter to a url"""
 
+
 import urllib.request
 import urllib.parse
 import sys
+
 
 url = sys.argv[1]
 email = sys.argv[2]
