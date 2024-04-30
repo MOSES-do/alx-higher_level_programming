@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-"""Python script to request response  and display X-Request-Id value
-from header object and key values using ".get('key')
-"""
+"""Python script to request response  and display X-Request-Id value"""
 
 
 import urllib.request
