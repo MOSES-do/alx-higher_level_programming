@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """display body of a client to server response"""
 
+
 import urllib.request
 import urllib.error
 import sys
