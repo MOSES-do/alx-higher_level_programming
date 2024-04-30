@@ -3,7 +3,7 @@
 from header object and key values using ".get('key')"""
 
 
-import urllib.request
+import urllib
 import sys
 
 
