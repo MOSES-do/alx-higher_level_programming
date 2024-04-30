@@ -9,6 +9,8 @@ import sys
 
 url = sys.argv[1]
 email = sys.argv[2]
+
+
 if __name__ == "__main__":
     data = urllib.parse.urlencode({'email': sys.argv[2]})
     data = data.encode('ascii')
