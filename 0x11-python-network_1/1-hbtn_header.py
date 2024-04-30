@@ -8,7 +8,6 @@ import sys
 
 
 if __name__ == '__main__':
-    URI = sys.argv[1]
-    with urllib.request.urlopen(URI) as response:
+    with urllib.request.urlopen(sys.argv[1]) as response:
         html_id = response.headers.get('X-Request-Id')
         print(html_id)
