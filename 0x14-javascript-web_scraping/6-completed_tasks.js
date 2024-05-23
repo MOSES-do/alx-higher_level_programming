@@ -4,15 +4,29 @@
 const request = require('request');
 const url = process.argv[2];
 
-const fetchMovies = () => {
-  const usersCompletedTasks = {};
-  let completedTasks = 0;
-  const uniqueId = [];
-  const uniqueSet = new Set();
+const fetchTodo = () => {
   request(url, { json: true }, (error, response, body) => {
     if (error) console.log(error);
-
     const result = body;
+
+    const todo = {};
+    for (const obj of result) {
+      if (obj.completed === true) {
+        /* check if the current userId does not exist in todo object */
+        if (todo[obj.userId] === undefined) {
+        /* set the userid as the key and initialize its value to 0 */
+          todo[obj.userId] = 0;
+        }
+        /* keep count where current userId obj has completed=true */
+        todo[obj.userId] += 1;
+      }
+    }
+    console.log(todo);
+    /**
+      const usersCompletedTasks = {};
+      let completedTasks = 0;
+      const uniqueId = [];
+      const uniqueSet = new Set();
     for (const obj of result) {
       // filter userid to get unique userId
       if (!uniqueSet.has(obj.userId)) {
@@ -32,8 +46,7 @@ const fetchMovies = () => {
       }
       usersCompletedTasks[id] = completedTasks;
     }
-    console.log(usersCompletedTasks);
+    console.log(usersCompletedTasks); */
   });
 };
-
-fetchMovies();
+fetchTodo();
