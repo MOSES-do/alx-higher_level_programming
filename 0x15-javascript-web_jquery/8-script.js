@@ -7,6 +7,9 @@ $(document).ready(function () {
             for (i in data.results) {
                 $('#list_movies').append(`<li> ${movie[i].title} </li>`)
             }
+        },
+        error: function (err) {
+            console.log(err);
         }
     });
 })

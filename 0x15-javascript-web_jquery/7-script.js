@@ -4,6 +4,10 @@ $(document).ready(function () {
         method: 'GET',
         success: function (data) {
             $('#character').html(data.name)
+        },
+
+         error: function (err) {
+                console.log(err);
         }
     });
 })

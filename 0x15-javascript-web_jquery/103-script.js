@@ -7,6 +7,10 @@ $(document).ready(() => {
             method: 'GET',
             success: function (data) {
                 $('#hello').html(data.hello);
+            },
+
+             error: function (err) {
+                console.log(err);
             }
         })
     }
